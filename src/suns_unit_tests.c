@@ -513,7 +513,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char uint32_buf[] = { 0x04, 0x8f, 0xf4, 0xea };
     suns_value_set_uint32(v, 76543210);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(htole32(v->value.u32)), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(uint32_buf, buf, 4) == 0) {
         debug("uint32 passed");
