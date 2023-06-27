@@ -507,7 +507,11 @@ int suns_init_modbus(suns_app_t *app)
     debug("app->timeout = %d", app->timeout);
     timeout.tv_sec = app->timeout / 1000;
     timeout.tv_usec = (app->timeout % 1000) * 1000;
+#if (LIBMODBUS_VERSION_CHECK(3, 1, 2))
+    modbus_set_response_timeout(app->mb_ctx, timeout.tv_sec, timeout.tv_usec);
+#else
     modbus_set_response_timeout(app->mb_ctx, &timeout);
+#endif
 
     debug("timeout.tv_sec = %d", (int) timeout.tv_sec);
     debug("timeout.tv_usec = %d", (int) timeout.tv_usec);
