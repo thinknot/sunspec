@@ -1,6 +1,6 @@
 <sunSpecModels v="1">
   <!-- 404: advanced string combiner -->
-  <model id="404" len="39">
+  <model id="404" len="39" name="string_combiner">
     <block len="25">
       <point id="DCA_SF" offset="0" type="sunssf" mandatory="true" />
       <point id="DCAhr_SF" offset="1" type="sunssf" />
@@ -8,7 +8,7 @@
       <point id="DCW_SF" offset="3" type="sunssf" />
       <point id="DCWh_SF" offset="4" type="sunssf" />
       <point id="DCAMax" offset="5" type="uint16" sf="DCA_SF" units="A" mandatory="true" />
-      <point id="N" offset="6" type="uint16" mandatory="true" />
+      <point id="N" offset="6" type="count" mandatory="true" />
       <point id="Evt" offset="7" type="bitfield32" mandatory="true">
         <symbol id="LOW_VOLTAGE">0</symbol>
         <symbol id="LOW_POWER">1</symbol>
@@ -44,7 +44,7 @@
       <point id="InDCW_SF" offset="23" type="sunssf" />
       <point id="InDCWh_SF" offset="24" type="sunssf" />
     </block>
-    <block type="repeating" len="14">
+    <block type="repeating" len="14" name="string">
       <point id="InID" offset="0" type="uint16" mandatory="true" />
       <point id="InEvt" offset="1" type="bitfield32" mandatory="true">
         <symbol id="LOW_VOLTAGE">0</symbol>
@@ -110,7 +110,7 @@
     </point>
     <point id="EvtVnd">
       <label>Vendor Event</label>
-      <description>Bitmask value.  Vendor defnied events</description>
+      <description>Bitmask value.  Vendor defined events</description>
       <notes></notes>
     </point>
     <point id="DCA">
@@ -154,12 +154,12 @@
       <notes></notes>
     </point>
     <point id="InEvt">
-      <label>Event</label>
+      <label>Input Event</label>
       <description>String Input Event Flags</description>
       <notes></notes>
     </point>
     <point id="InEvtVnd">
-      <label>Vendor Event</label>
+      <label>Input Event Vendor</label>
       <description>String Input Vendor Event Flags</description>
       <notes></notes>
     </point>

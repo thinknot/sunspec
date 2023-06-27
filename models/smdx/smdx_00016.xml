@@ -7,7 +7,7 @@
         <symbol id="STATIC">0</symbol>
         <symbol id="DHCP">1</symbol>
       </point>
-      <point id="Ctl" offset="5" type="enum16" mandatory="true" access="rw" >
+      <point id="Ctl" offset="5" type="bitfield16" mandatory="true" access="rw" >
         <symbol id="ENABLE_DNS">0</symbol>
         <symbol id="ENABLE_NTP">1</symbol>
       </point>
@@ -16,13 +16,13 @@
       <point id="Gw" offset="22" type="string" len="8" access="rw" />
       <point id="DNS1" offset="30" type="string" len="8" access="rw" />
       <point id="DNS2" offset="38" type="string" len="8" access="rw" />
-      <point id="MAC" offset="46" type="uint64" access="r" />
+      <point id="MAC" offset="46" type="eui48" access="r" />
       <point id="LnkCtl" offset="50" type="bitfield16" access="rw" >
         <symbol id="AUTONEGOTIATE">0</symbol>
         <symbol id="FULL_DUPLEX">1</symbol>
         <symbol id="FORCE_10MB">2</symbol>
         <symbol id="FORCE_100MB">3</symbol>
-        <symbol id="FORCE_1GB">3</symbol>
+        <symbol id="FORCE_1GB">4</symbol>
       </point>
       <point id="Pad" offset="51" type="pad" />
     </block>
@@ -70,7 +70,7 @@
     </point>
     <point id="Addr">
       <label>Address</label>
-      <description>IP addreess</description>
+      <description>IP address</description>
       <notes></notes>
     </point>
     <point id="Msk">

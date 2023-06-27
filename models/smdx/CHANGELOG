@@ -8,7 +8,7 @@
 
 2012 Octoboer 23 : Flo Yee, Solectria renewables reported incorrect type of TmpAmb.  uint16 should be int16.   Models affected: E 308.
 
-2012 October 26: Bill Randle, AEI reported incorrect type for PF in the Watt-PF function.  PF should be a signed value (int16), not unsigned (unit16).  Models affected: IC 131 
+2012 October 26: Bill Randle, AEI reported incorrect type for PF in the Watt-PF function.  PF should be a signed value (int16), not unsigned (unit16).  Models affected: IC 131
 
 2012 November 1: Bob Fox, Loggerware reported use of the degree symbol problematic to denote °C.  It was agreed to use just "C" to denote degrees centrigrade in the units.  Models affected: E 303, 308
 
@@ -41,3 +41,31 @@
 2013 April 29: John Nunneley, SunSpec.  Corrected offsets in models.  Models affected C 1, NC 16, M 305
 
 2013 April 29: John Nunneley, SunSpec.  Contributed DRAFT secure read and write models.  Models affected SEC 3-4.
+
+------------------------------------------
+Models moved to SunSpec models repository
+------------------------------------------
+
+2014 January 9: Bob Fox, Loggerware. Updates from the last SunSpec official release not previously checked in; correction of some model lengths; addition of model/repeating block name attributes; addition of test models 6300x.
+
+2015 April 7: Bob Fox, SunSpec. Updated model 11 to correct MAC address point; added new point type of eui48. Added storage models 801, 802, and 803.
+
+2015 June 3: Bob Fox, SunSpec. Updated model 63001. Added a constant scale factor to point uint32_4. Added label information.
+
+2015 June 3: Bob Fox, SunSpec. Updated model 63002 to include label information.
+
+2016 February 4: Bob Fox SunSpec. Corrected acc32 to float32 in models 211, 212, 213, 214.
+
+2016 February 4: Bob Fox SunSpec. Removed scale factor definition from DeptRef definition in model 126.
+
+2016 April 20: Bob Fox, SunSpec. Corrected model length to the convention of fixed block + one repeating block.
+
+2016 April 20: Bob Fox SunSpec. Corrected units for model 121 WGra to be per second rather per minute to be consistent with previous correction to IEC 61850-7-420.
+
+2016 July 14: Andrew Miller, Doosan GridTech. Updated models 801, 802, 803, 804, 805, 806, 807, 808, 809 reflecting changes for the draft 4 revision of the SunSpec storage models.
+
+2016 Oct 16: Andrew Miller, Doosan GridTech. Updated model 803 correcting miscellaneous issues found in first publication of Draft 4
+
+2016 Oct 16: Bob Fox SunSpec. Added proposed models 139-145 in test status.
+
+
