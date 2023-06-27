@@ -413,7 +413,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char int16_buf[] = { 0xd8, 0xf1 };
     suns_value_set_int16(v, -9999);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(int16_buf, buf, 2) == 0) {
         debug("int16 passed");
@@ -438,7 +438,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char uint16_buf[] = { 0x27, 0x0f };
     suns_value_set_uint16(v, 9999);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(uint16_buf, buf, 2) == 0) {
         debug("uint16 passed");
@@ -462,7 +462,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char acc16_buf[] = { 0x27, 0x0f };
     suns_value_set_acc16(v, 9999);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(acc16_buf, buf, 2) == 0) {
         debug("acc16 passed");
@@ -475,7 +475,7 @@ int unit_test_value_to_buf(const char **name)
     total++;
     suns_value_set_acc16(v, 0xFFFF);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (v->meta != SUNS_VALUE_NOT_IMPLEMENTED) {
         debug("acc16 0xFFFF check passed");
@@ -489,7 +489,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char int32_buf[] = { 0xfb, 0x70, 0x0b, 0x16 };
     suns_value_set_int32(v, -76543210);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(int32_buf, buf, 4) == 0) {
         debug("int32 passed");
@@ -537,7 +537,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char acc32_buf[] = { 0x04, 0x8f, 0xf4, 0xea };
     suns_value_set_acc32(v, 76543210);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(acc32_buf, buf, 4) == 0) {
         debug("acc32 passed");
@@ -550,7 +550,7 @@ int unit_test_value_to_buf(const char **name)
     total++;
     suns_value_set_acc32(v, 0xFFFFFFFF);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (v->meta != SUNS_VALUE_NOT_IMPLEMENTED) {
         debug("acc32 0xFFFFFFFF check passed");
@@ -565,7 +565,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char float32_buf[] = { 0x40, 0x49, 0x0f, 0xdb };
     suns_value_set_float32(v, 3.14159265358979323846);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(float32_buf, buf, 4) == 0) {
         debug("float32 passed");
@@ -690,7 +690,7 @@ int unit_test_value_to_buf(const char **name)
     unsigned char ipv4_buf[] = { 192, 168, 0, 1 };
     suns_value_set_ipv4(v, 0xC0A80001);
     suns_value_to_buf(v, buf, SMALL_BUFFER_SIZE);
-	debug_dump_buffer((unsigned char *)&(v->value.u32), 4);
+	debug_dump_buffer((unsigned char*)(&(v->value.u32)), 4);
     debug_dump_buffer(buf, 4);
     if (compare_buf(ipv4_buf, buf, 4) == 0) {
         debug("ipv4 passed");
@@ -1337,5 +1337,3 @@ int unit_test_suns_type_size(const char **name)
 
     return 0;
 }
-
-
