@@ -206,8 +206,8 @@ suns_type_t suns_type_from_name(char *name)
         { "pad",        SUNS_PAD },
         { "ipaddr",     SUNS_IPV4 },
         { "ipv6addr",   SUNS_IPV6 },
-        { "eui48",     SUNS_UINT64 },
-        { "count",     SUNS_UINT16 },
+        { "eui48",      SUNS_UINT64 },
+        { "count",      SUNS_UINT16 },
         { "undef",      SUNS_UNDEF },
         { NULL,         -1 },
     };
